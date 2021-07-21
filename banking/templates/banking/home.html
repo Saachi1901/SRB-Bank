@@ -1,0 +1,41 @@
+{% extends 'banking/index.html' %}
+
+{% block title%} Home {% endblock %}
+
+{% block body  %}
+{% load static %}
+<div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+    
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="https://images.unsplash.com/photo-1607863680198-23d4b2565df0?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80" class="d-block w-100" height="90%" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+            <div class="carousel-caption text-start">
+                <h1>Transaction</h1>
+                <p>Fast, secure and cost-effective. But that’s not all. We know you like to be in control and always know what you are paying for, so that’s exactly what you’ll get with us.</p>
+                <p><a class="btn btn-lg btn-success" href="/customers">Transfer Money</a></p>
+              </div>
+        </div>
+      </div>
+      
+    </div>
+    
+  </div>
+
+  <div class="container my-5">
+    <div class="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3 border shadow-lg">
+      <div class="col-lg-7 p-3 p-lg-5 pt-lg-3">
+        <h1 class="display-4 fw-bold lh-1"> View Transaction History</h1>
+        <p class="lead">You can check your account statements and transaction history online</p>
+        <div class="d-grid gap-2 d-md-flex justify-content-md-start mb-4 mb-lg-3">
+          <button type="button" class="btn btn-success btn-lg px-4 me-md-2 fw-bold"><a class="btn btn-lg btn-success" href="/history" > View Here>> </a></button>
+          
+        </div>
+      </div>
+      <div class="col-lg-4 offset-lg-1 p-0 overflow-hidden shadow-lg">
+          <img class="rounded-lg-3" src="https://images.unsplash.com/photo-1579621970795-87facc2f976d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=750&q=80" alt="" width="450px" height="450px">
+      </div>
+    </div>
+</div>
+
+{% endblock %}

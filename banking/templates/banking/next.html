@@ -1,0 +1,54 @@
+{% extends 'banking/index.html' %}
+
+{% block title%} Transfer{% endblock %}
+
+{% block body %}
+<body style="overflow-x: hidden;
+height: 100%;
+background-repeat: no-repeat; 
+background: #606c88;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #3f4c6b, #606c88);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #3f4c6b, #606c88); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+">
+
+    <br>
+    <br>
+    <div>
+        <h2 style="color: yellowgreen; margin: 1.5%;">WELCOME {{Banker.name}}! </h2>
+        <p style="color: white; margin: 1.5%;">Transfer Money from your account to your friend account. Your current balance is {{Banker.amt}}</p>
+    </div>    
+    <div class="col-lg-5 offset-lg-2" style="box-sizing:border-box; background-color: white; margin: 1.5%; border-radius: 25px;">
+      <div class="hero__form">
+        <h3 style="text-align: center;">Transfer Money</h3>
+      <form method="POST" action="/history" >
+      {% csrf_token %}
+      <br>
+        <div class="input-list">
+          <div class="input-list-item">
+            <h5 style="margin-left: 2%;">Receiver's Name :</h5>
+              <select class="form-select" name="to" aria-label="Default select example" style="width: 400px; margin-left: 2%;" required>
+                <option selected>select</option>
+                {% for i in bankers %}
+                <option>{{i.name}}</option>
+                {% endfor %}
+              </select>
+          </div>
+          <div class="input-list-item">
+            <h5 style="margin-left: 2%;">Amount</h5>
+              <input type="number" class="form-control" placeholder="Enter Amount" name="amount2" style="margin-left: 2%; width: 400px;" required></input>
+          </div>
+        <br>
+        <button type="submit" name="submit" id="s" class="btn btn-success btn-sm position-center"
+        value="{{Banker.name}}" style="margin-left: 40%;" >Transfer</button>
+        </div>
+        <br>
+      </form>
+      </div>
+      </div>
+    </div>
+  </div>
+
+
+</body>
+
+{% endblock %}

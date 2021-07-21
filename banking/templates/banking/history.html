@@ -1,0 +1,49 @@
+{% extends 'banking/index.html' %}
+
+{% block title%} history{% endblock %}
+{% block body %}
+<body  style="color: #000;
+overflow-x: hidden;
+height: 100%;
+background-repeat: no-repeat; 
+background: #00F260;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #0575E6, #00F260);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #0575E6, #00F260); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+">
+<br>
+<section class="content customer">
+    <h2 class="text-center" style="margin-top: 1%; color: white; margin-bottom: 5px;"><strong>Transaction History</strong></h2>
+    <table class="table  text-center" style="
+    background-color: white;
+    border: solid black 5px;
+    margin-top: 2%;
+    margin-left: 325px;
+    width: 700px;
+    height: auto;
+    ">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">Sender's Name</th>
+          <th scope="col">Sender's Account No.</th>
+          <th scope="col">Sender's Current Balance</th>
+          <th scope="col">Money Deposit</th>
+          <th scope="col">Receiver's Name</th>
+          <th scope="col">Date</th>
+        </tr>
+      </thead>
+      {% for details in history %}
+      <tbody>
+        <tr>
+          <td>{{details.source_name}}</td>
+          <td>{{details.sender_acc_no}}</td>
+          <td>{{details.Current_balance}}</td>
+          <td>{{details.money_deposit}}</td>
+          <td>{{details.receiver_name}}</td>
+          <td>{{details.date}}</td> 
+        </tr>
+      </tbody>
+      {% endfor %}
+    </table>
+    </section>
+    </body>
+{% endblock %}
